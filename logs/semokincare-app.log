@@ -1,0 +1,294 @@
+2024-07-26T21:17:15.302+07:00  INFO 42650 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Starting SemokinCareApplication using Java 17.0.11 with PID 42650 (/home/enigma/Documents/Repository/semokin-care/target/classes started by enigma in /home/enigma/Documents/Repository/semokin-care)
+2024-07-26T21:17:15.304+07:00  INFO 42650 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : The following 1 profile is active: "dev"
+2024-07-26T21:17:15.684+07:00  INFO 42650 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26T21:17:15.700+07:00  INFO 42650 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2024-07-26T21:17:15.992+07:00  INFO 42650 --- [semokin-care] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26T21:17:16.035+07:00  INFO 42650 --- [semokin-care] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26T21:17:16.060+07:00  INFO 42650 --- [semokin-care] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-26T21:17:16.277+07:00  INFO 42650 --- [semokin-care] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26T21:17:16.297+07:00  INFO 42650 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-26T21:17:16.365+07:00  INFO 42650 --- [semokin-care] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@51e3d37e
+2024-07-26T21:17:16.366+07:00  INFO 42650 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-26T21:17:17.235+07:00  INFO 42650 --- [semokin-care] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26T21:17:17.248+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists admins drop constraint if exists FKanhsicqm3lc8ya77tr7r0je18
+2024-07-26T21:17:17.250+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T21:17:17.250+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "admins" does not exist, skipping
+2024-07-26T21:17:17.251+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers drop constraint if exists FKpog72rpahj62h7nod9wwc28if
+2024-07-26T21:17:17.251+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T21:17:17.252+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "customers" does not exist, skipping
+2024-07-26T21:17:17.252+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists user_roles drop constraint if exists FKhfh9dx7w3ubf1co1vdev94g3f
+2024-07-26T21:17:17.253+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T21:17:17.253+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_roles" does not exist, skipping
+2024-07-26T21:17:17.253+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists admins cascade
+2024-07-26T21:17:17.254+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T21:17:17.254+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "admins" does not exist, skipping
+2024-07-26T21:17:17.254+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists customers cascade
+2024-07-26T21:17:17.255+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T21:17:17.255+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "customers" does not exist, skipping
+2024-07-26T21:17:17.255+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists user_roles cascade
+2024-07-26T21:17:17.256+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T21:17:17.256+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_roles" does not exist, skipping
+2024-07-26T21:17:17.256+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists users cascade
+2024-07-26T21:17:17.257+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T21:17:17.257+07:00  WARN 42650 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2024-07-26T21:17:17.263+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : create table admins (admin_specific_field varchar(255), id varchar(255) not null, primary key (id))
+2024-07-26T21:17:17.272+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : create table customers (loyalty_points integer, customer_specific_field varchar(255), id varchar(255) not null, primary key (id))
+2024-07-26T21:17:17.276+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : create table user_roles (role varchar(255), user_id varchar(255) not null)
+2024-07-26T21:17:17.280+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : create table users (is_deleted boolean, created_at bigint not null, updated_at bigint, phone_number varchar(15) not null, address varchar(255) not null, email varchar(255) not null unique, full_name varchar(255) not null, id varchar(255) not null, password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+2024-07-26T21:17:17.287+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists admins add constraint FKanhsicqm3lc8ya77tr7r0je18 foreign key (id) references users
+2024-07-26T21:17:17.289+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers add constraint FKpog72rpahj62h7nod9wwc28if foreign key (id) references users
+2024-07-26T21:17:17.291+07:00 DEBUG 42650 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists user_roles add constraint FKhfh9dx7w3ubf1co1vdev94g3f foreign key (user_id) references users
+2024-07-26T21:17:17.294+07:00  INFO 42650 --- [semokin-care] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T21:17:17.447+07:00  INFO 42650 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Started SemokinCareApplication in 2.525 seconds (process running for 3.004)
+2024-07-26T21:17:17.453+07:00  INFO 42650 --- [semokin-care] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T21:17:17.455+07:00  INFO 42650 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-26T21:17:17.463+07:00  INFO 42650 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-26T21:18:58.218+07:00  INFO 42954 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Starting SemokinCareApplication using Java 17.0.11 with PID 42954 (/home/enigma/Documents/Repository/semokin-care/target/classes started by enigma in /home/enigma/Documents/Repository/semokin-care)
+2024-07-26T21:18:58.220+07:00  INFO 42954 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : The following 1 profile is active: "dev"
+2024-07-26T21:18:58.600+07:00  INFO 42954 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26T21:18:58.616+07:00  INFO 42954 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2024-07-26T21:18:58.899+07:00  INFO 42954 --- [semokin-care] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26T21:18:58.942+07:00  INFO 42954 --- [semokin-care] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26T21:18:58.968+07:00  INFO 42954 --- [semokin-care] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-26T21:18:59.200+07:00  INFO 42954 --- [semokin-care] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26T21:18:59.221+07:00  INFO 42954 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-26T21:18:59.287+07:00  INFO 42954 --- [semokin-care] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3332c7a5
+2024-07-26T21:18:59.288+07:00  INFO 42954 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-26T21:19:00.192+07:00  INFO 42954 --- [semokin-care] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26T21:19:00.204+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists admins drop constraint if exists FKanhsicqm3lc8ya77tr7r0je18
+2024-07-26T21:19:00.211+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers drop constraint if exists FKpog72rpahj62h7nod9wwc28if
+2024-07-26T21:19:00.212+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists user_roles drop constraint if exists FKhfh9dx7w3ubf1co1vdev94g3f
+2024-07-26T21:19:00.214+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists admins cascade
+2024-07-26T21:19:00.216+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists customers cascade
+2024-07-26T21:19:00.217+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists user_roles cascade
+2024-07-26T21:19:00.219+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists users cascade
+2024-07-26T21:19:00.224+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : create table admins (admin_specific_field varchar(255), id varchar(255) not null, primary key (id))
+2024-07-26T21:19:00.229+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : create table customers (loyalty_points integer, customer_specific_field varchar(255), id varchar(255) not null, primary key (id))
+2024-07-26T21:19:00.233+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : create table user_roles (role varchar(255), user_id varchar(255) not null)
+2024-07-26T21:19:00.236+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : create table users (is_deleted boolean, created_at bigint not null, updated_at bigint, phone_number varchar(15) not null, address varchar(255) not null, email varchar(255) not null unique, full_name varchar(255) not null, id varchar(255) not null, password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+2024-07-26T21:19:00.242+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists admins add constraint FKanhsicqm3lc8ya77tr7r0je18 foreign key (id) references users
+2024-07-26T21:19:00.244+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers add constraint FKpog72rpahj62h7nod9wwc28if foreign key (id) references users
+2024-07-26T21:19:00.246+07:00 DEBUG 42954 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists user_roles add constraint FKhfh9dx7w3ubf1co1vdev94g3f foreign key (user_id) references users
+2024-07-26T21:19:00.249+07:00  INFO 42954 --- [semokin-care] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T21:19:00.390+07:00  INFO 42954 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Started SemokinCareApplication in 2.631 seconds (process running for 3.136)
+2024-07-26T21:19:00.396+07:00  INFO 42954 --- [semokin-care] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T21:19:00.399+07:00  INFO 42954 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-26T21:19:00.403+07:00  INFO 42954 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-26T21:19:18.732+07:00  INFO 43069 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Starting SemokinCareApplication using Java 17.0.11 with PID 43069 (/home/enigma/Documents/Repository/semokin-care/target/classes started by enigma in /home/enigma/Documents/Repository/semokin-care)
+2024-07-26T21:19:18.735+07:00  INFO 43069 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : The following 1 profile is active: "dev"
+2024-07-26T21:19:19.100+07:00  INFO 43069 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26T21:19:19.117+07:00  INFO 43069 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2024-07-26T21:19:19.401+07:00  INFO 43069 --- [semokin-care] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26T21:19:19.444+07:00  INFO 43069 --- [semokin-care] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26T21:19:19.469+07:00  INFO 43069 --- [semokin-care] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-26T21:19:19.688+07:00  INFO 43069 --- [semokin-care] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26T21:19:19.708+07:00  INFO 43069 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-26T21:19:19.771+07:00  INFO 43069 --- [semokin-care] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1095d23a
+2024-07-26T21:19:19.772+07:00  INFO 43069 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-26T21:19:20.642+07:00  INFO 43069 --- [semokin-care] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26T21:19:20.654+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists admins drop constraint if exists FKanhsicqm3lc8ya77tr7r0je18
+2024-07-26T21:19:20.657+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers drop constraint if exists FKpog72rpahj62h7nod9wwc28if
+2024-07-26T21:19:20.658+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists user_roles drop constraint if exists FKhfh9dx7w3ubf1co1vdev94g3f
+2024-07-26T21:19:20.660+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists admins cascade
+2024-07-26T21:19:20.662+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists customers cascade
+2024-07-26T21:19:20.664+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists user_roles cascade
+2024-07-26T21:19:20.666+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists users cascade
+2024-07-26T21:19:20.671+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : create table admins (admin_specific_field varchar(255), id varchar(255) not null, primary key (id))
+2024-07-26T21:19:20.676+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : create table customers (loyalty_points integer, customer_specific_field varchar(255), id varchar(255) not null, primary key (id))
+2024-07-26T21:19:20.680+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : create table user_roles (role varchar(255), user_id varchar(255) not null)
+2024-07-26T21:19:20.684+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : create table users (is_deleted boolean, created_at bigint not null, updated_at bigint, phone_number varchar(15) not null, address varchar(255) not null, email varchar(255) not null unique, full_name varchar(255) not null, id varchar(255) not null, password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+2024-07-26T21:19:20.691+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists admins add constraint FKanhsicqm3lc8ya77tr7r0je18 foreign key (id) references users
+2024-07-26T21:19:20.693+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers add constraint FKpog72rpahj62h7nod9wwc28if foreign key (id) references users
+2024-07-26T21:19:20.695+07:00 DEBUG 43069 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists user_roles add constraint FKhfh9dx7w3ubf1co1vdev94g3f foreign key (user_id) references users
+2024-07-26T21:19:20.698+07:00  INFO 43069 --- [semokin-care] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T21:19:20.843+07:00  INFO 43069 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Started SemokinCareApplication in 2.509 seconds (process running for 2.989)
+2024-07-26T21:19:20.849+07:00  INFO 43069 --- [semokin-care] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T21:19:20.852+07:00  INFO 43069 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-26T21:19:20.857+07:00  INFO 43069 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-26T22:12:11.791+07:00  INFO 48700 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Starting SemokinCareApplication using Java 17.0.11 with PID 48700 (/home/enigma/Documents/Repository/semokin-care/target/classes started by enigma in /home/enigma/Documents/Repository/semokin-care)
+2024-07-26T22:12:11.794+07:00  INFO 48700 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : The following 1 profile is active: "dev"
+2024-07-26T22:12:12.175+07:00  INFO 48700 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26T22:12:12.193+07:00  INFO 48700 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2024-07-26T22:12:12.478+07:00  INFO 48700 --- [semokin-care] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26T22:12:12.523+07:00  INFO 48700 --- [semokin-care] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26T22:12:12.548+07:00  INFO 48700 --- [semokin-care] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-26T22:12:12.768+07:00  INFO 48700 --- [semokin-care] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26T22:12:12.788+07:00  INFO 48700 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-26T22:12:12.850+07:00  INFO 48700 --- [semokin-care] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@574059d5
+2024-07-26T22:12:12.852+07:00  INFO 48700 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-26T22:12:13.750+07:00  INFO 48700 --- [semokin-care] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26T22:12:13.761+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers drop constraint if exists FKei3pv0xpil6qqevhw33go9bx5
+2024-07-26T22:12:13.767+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:13.767+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "fkei3pv0xpil6qqevhw33go9bx5" of relation "customers" does not exist, skipping
+2024-07-26T22:12:13.767+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers drop constraint if exists FKrh1g1a20omjmn6kurd35o3eit
+2024-07-26T22:12:13.768+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:13.769+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "fkrh1g1a20omjmn6kurd35o3eit" of relation "customers" does not exist, skipping
+2024-07-26T22:12:13.769+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs drop constraint if exists FK323lksjso1ji6t30n089yp1jn
+2024-07-26T22:12:13.769+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:13.770+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "staffs" does not exist, skipping
+2024-07-26T22:12:13.770+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs drop constraint if exists FKamgwfug55gkfkjidp88wyaj37
+2024-07-26T22:12:13.770+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:13.771+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "staffs" does not exist, skipping
+2024-07-26T22:12:13.771+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists user_roles drop constraint if exists FKh8ciramu9cc9q3qcqiv4ue8a6
+2024-07-26T22:12:13.772+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:13.772+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "fkh8ciramu9cc9q3qcqiv4ue8a6" of relation "user_roles" does not exist, skipping
+2024-07-26T22:12:13.772+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists user_roles drop constraint if exists FKhfh9dx7w3ubf1co1vdev94g3f
+2024-07-26T22:12:13.774+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists customers cascade
+2024-07-26T22:12:13.777+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists profile_pictures cascade
+2024-07-26T22:12:13.777+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:13.777+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "profile_pictures" does not exist, skipping
+2024-07-26T22:12:13.777+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists roles cascade
+2024-07-26T22:12:13.778+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:13.778+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "roles" does not exist, skipping
+2024-07-26T22:12:13.778+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists staffs cascade
+2024-07-26T22:12:13.779+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:13.779+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "staffs" does not exist, skipping
+2024-07-26T22:12:13.779+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists user_roles cascade
+2024-07-26T22:12:13.780+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : drop table if exists users cascade
+2024-07-26T22:12:13.782+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:13.783+07:00  WARN 48700 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : drop cascades to constraint fkanhsicqm3lc8ya77tr7r0je18 on table admins
+2024-07-26T22:12:13.787+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : create table customers (is_deleted boolean, created_at bigint not null, date_of_birth bigint not null, updated_at bigint, phone_number varchar(15) not null, address varchar(255) not null, first_name varchar(255) not null, id varchar(255) not null, last_name varchar(255), profile_picture_id varchar(255) unique, user_id varchar(255) unique, primary key (id))
+2024-07-26T22:12:13.794+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : create table profile_pictures (size bigint not null, id varchar(255) not null, name varchar(255) not null, url varchar(255) not null, primary key (id))
+2024-07-26T22:12:13.798+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : create table roles (id varchar(255) not null, role varchar(255) check (role in ('CUSTOMER','STAFF','ADMIN')), primary key (id))
+2024-07-26T22:12:13.803+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : create table staffs (is_deleted boolean, created_at bigint not null, date_of_birth bigint not null, updated_at bigint, phone_number varchar(15) not null, address varchar(255) not null, first_name varchar(255) not null, id varchar(255) not null, last_name varchar(255), profile_picture_id varchar(255) unique, user_id varchar(255) unique, primary key (id))
+2024-07-26T22:12:13.809+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : create table user_roles (role_id varchar(255) not null, user_id varchar(255) not null, primary key (role_id, user_id))
+2024-07-26T22:12:13.817+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : create table users (email varchar(255) not null unique, id varchar(255) not null, password varchar(255) not null, username varchar(255) not null unique, primary key (id))
+2024-07-26T22:12:13.830+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers add constraint FKei3pv0xpil6qqevhw33go9bx5 foreign key (profile_picture_id) references profile_pictures
+2024-07-26T22:12:13.836+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers add constraint FKrh1g1a20omjmn6kurd35o3eit foreign key (user_id) references users
+2024-07-26T22:12:13.840+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs add constraint FK323lksjso1ji6t30n089yp1jn foreign key (profile_picture_id) references profile_pictures
+2024-07-26T22:12:13.843+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs add constraint FKamgwfug55gkfkjidp88wyaj37 foreign key (user_id) references users
+2024-07-26T22:12:13.845+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists user_roles add constraint FKh8ciramu9cc9q3qcqiv4ue8a6 foreign key (role_id) references roles
+2024-07-26T22:12:13.848+07:00 DEBUG 48700 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists user_roles add constraint FKhfh9dx7w3ubf1co1vdev94g3f foreign key (user_id) references users
+2024-07-26T22:12:13.853+07:00  INFO 48700 --- [semokin-care] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T22:12:14.008+07:00  INFO 48700 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Started SemokinCareApplication in 2.615 seconds (process running for 3.078)
+2024-07-26T22:12:14.015+07:00  INFO 48700 --- [semokin-care] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T22:12:14.016+07:00 DEBUG 48700 --- [semokin-care] [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists customers drop constraint if exists FKei3pv0xpil6qqevhw33go9bx5
+2024-07-26T22:12:14.018+07:00 DEBUG 48700 --- [semokin-care] [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists customers drop constraint if exists FKrh1g1a20omjmn6kurd35o3eit
+2024-07-26T22:12:14.019+07:00 DEBUG 48700 --- [semokin-care] [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists staffs drop constraint if exists FK323lksjso1ji6t30n089yp1jn
+2024-07-26T22:12:14.021+07:00 DEBUG 48700 --- [semokin-care] [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists staffs drop constraint if exists FKamgwfug55gkfkjidp88wyaj37
+2024-07-26T22:12:14.022+07:00 DEBUG 48700 --- [semokin-care] [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists user_roles drop constraint if exists FKh8ciramu9cc9q3qcqiv4ue8a6
+2024-07-26T22:12:14.024+07:00 DEBUG 48700 --- [semokin-care] [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists user_roles drop constraint if exists FKhfh9dx7w3ubf1co1vdev94g3f
+2024-07-26T22:12:14.025+07:00 DEBUG 48700 --- [semokin-care] [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists customers cascade
+2024-07-26T22:12:14.027+07:00 DEBUG 48700 --- [semokin-care] [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists profile_pictures cascade
+2024-07-26T22:12:14.030+07:00 DEBUG 48700 --- [semokin-care] [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists roles cascade
+2024-07-26T22:12:14.032+07:00 DEBUG 48700 --- [semokin-care] [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists staffs cascade
+2024-07-26T22:12:14.035+07:00 DEBUG 48700 --- [semokin-care] [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists user_roles cascade
+2024-07-26T22:12:14.037+07:00 DEBUG 48700 --- [semokin-care] [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists users cascade
+2024-07-26T22:12:14.042+07:00  INFO 48700 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-26T22:12:14.048+07:00  INFO 48700 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-26T22:12:55.527+07:00  INFO 48830 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Starting SemokinCareApplication using Java 17.0.11 with PID 48830 (/home/enigma/Documents/Repository/semokin-care/target/classes started by enigma in /home/enigma/Documents/Repository/semokin-care)
+2024-07-26T22:12:55.530+07:00  INFO 48830 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : The following 1 profile is active: "dev"
+2024-07-26T22:12:55.887+07:00  INFO 48830 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26T22:12:55.905+07:00  INFO 48830 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
+2024-07-26T22:12:56.183+07:00  INFO 48830 --- [semokin-care] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26T22:12:56.228+07:00  INFO 48830 --- [semokin-care] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26T22:12:56.272+07:00  INFO 48830 --- [semokin-care] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-26T22:12:56.505+07:00  INFO 48830 --- [semokin-care] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26T22:12:56.527+07:00  INFO 48830 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-26T22:12:56.590+07:00  INFO 48830 --- [semokin-care] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72906e
+2024-07-26T22:12:56.591+07:00  INFO 48830 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-26T22:12:57.483+07:00  INFO 48830 --- [semokin-care] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26T22:12:57.516+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : create table customers (id varchar(255) not null, address varchar(255) not null, created_at bigint not null, date_of_birth bigint not null, first_name varchar(255) not null, is_deleted boolean, last_name varchar(255), phone_number varchar(15) not null, updated_at bigint, profile_picture_id varchar(255), user_id varchar(255), primary key (id))
+2024-07-26T22:12:57.524+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : create table profile_pictures (id varchar(255) not null, name varchar(255) not null, size bigint not null, url varchar(255) not null, primary key (id))
+2024-07-26T22:12:57.529+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : create table roles (id varchar(255) not null, role varchar(255) check (role in ('CUSTOMER','STAFF','ADMIN')), primary key (id))
+2024-07-26T22:12:57.533+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : create table staffs (id varchar(255) not null, address varchar(255) not null, created_at bigint not null, date_of_birth bigint not null, first_name varchar(255) not null, is_deleted boolean, last_name varchar(255), phone_number varchar(15) not null, updated_at bigint, profile_picture_id varchar(255), user_id varchar(255), primary key (id))
+2024-07-26T22:12:57.537+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : create table user_roles (user_id varchar(255) not null, role_id varchar(255) not null, primary key (user_id, role_id))
+2024-07-26T22:12:57.541+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : create table users (id varchar(255) not null, email varchar(255) not null, password varchar(255) not null, username varchar(255) not null, primary key (id))
+2024-07-26T22:12:57.545+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers drop constraint if exists UK85a59hr6x662ed62dkd3qqo5f
+2024-07-26T22:12:57.547+07:00  WARN 48830 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:57.548+07:00  WARN 48830 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk85a59hr6x662ed62dkd3qqo5f" of relation "customers" does not exist, skipping
+2024-07-26T22:12:57.548+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers add constraint UK85a59hr6x662ed62dkd3qqo5f unique (profile_picture_id)
+2024-07-26T22:12:57.550+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers drop constraint if exists UKeuat1oase6eqv195jvb71a93s
+2024-07-26T22:12:57.551+07:00  WARN 48830 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:57.552+07:00  WARN 48830 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "ukeuat1oase6eqv195jvb71a93s" of relation "customers" does not exist, skipping
+2024-07-26T22:12:57.552+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers add constraint UKeuat1oase6eqv195jvb71a93s unique (user_id)
+2024-07-26T22:12:57.554+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs drop constraint if exists UKrffufmb0ste9fjg8i8gjptifv
+2024-07-26T22:12:57.555+07:00  WARN 48830 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:57.555+07:00  WARN 48830 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "ukrffufmb0ste9fjg8i8gjptifv" of relation "staffs" does not exist, skipping
+2024-07-26T22:12:57.555+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs add constraint UKrffufmb0ste9fjg8i8gjptifv unique (profile_picture_id)
+2024-07-26T22:12:57.557+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs drop constraint if exists UK22xf2k8uqtauv6jjon7g9e069
+2024-07-26T22:12:57.560+07:00  WARN 48830 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:57.561+07:00  WARN 48830 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk22xf2k8uqtauv6jjon7g9e069" of relation "staffs" does not exist, skipping
+2024-07-26T22:12:57.562+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs add constraint UK22xf2k8uqtauv6jjon7g9e069 unique (user_id)
+2024-07-26T22:12:57.567+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists users drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
+2024-07-26T22:12:57.569+07:00  WARN 48830 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:57.570+07:00  WARN 48830 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2024-07-26T22:12:57.571+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists users add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+2024-07-26T22:12:57.574+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists users drop constraint if exists UKr43af9ap4edm43mmtq01oddj6
+2024-07-26T22:12:57.576+07:00  WARN 48830 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T22:12:57.577+07:00  WARN 48830 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "ukr43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+2024-07-26T22:12:57.577+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists users add constraint UKr43af9ap4edm43mmtq01oddj6 unique (username)
+2024-07-26T22:12:57.581+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers add constraint FKei3pv0xpil6qqevhw33go9bx5 foreign key (profile_picture_id) references profile_pictures
+2024-07-26T22:12:57.585+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers add constraint FKrh1g1a20omjmn6kurd35o3eit foreign key (user_id) references users
+2024-07-26T22:12:57.588+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs add constraint FK323lksjso1ji6t30n089yp1jn foreign key (profile_picture_id) references profile_pictures
+2024-07-26T22:12:57.590+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs add constraint FKamgwfug55gkfkjidp88wyaj37 foreign key (user_id) references users
+2024-07-26T22:12:57.593+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists user_roles add constraint FKh8ciramu9cc9q3qcqiv4ue8a6 foreign key (role_id) references roles
+2024-07-26T22:12:57.595+07:00 DEBUG 48830 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists user_roles add constraint FKhfh9dx7w3ubf1co1vdev94g3f foreign key (user_id) references users
+2024-07-26T22:12:57.599+07:00  INFO 48830 --- [semokin-care] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T22:12:57.772+07:00  INFO 48830 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Started SemokinCareApplication in 2.634 seconds (process running for 3.105)
+2024-07-26T22:12:57.781+07:00  INFO 48830 --- [semokin-care] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T22:12:57.784+07:00  INFO 48830 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-26T22:12:57.790+07:00  INFO 48830 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-26T23:17:17.205+07:00  INFO 58672 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Starting SemokinCareApplication using Java 17.0.11 with PID 58672 (/home/enigma/Documents/Repository/semokin-care/target/classes started by enigma in /home/enigma/Documents/Repository/semokin-care)
+2024-07-26T23:17:17.207+07:00  INFO 58672 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : The following 1 profile is active: "dev"
+2024-07-26T23:17:17.579+07:00  INFO 58672 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26T23:17:17.596+07:00  INFO 58672 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
+2024-07-26T23:17:17.872+07:00  INFO 58672 --- [semokin-care] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26T23:17:17.920+07:00  INFO 58672 --- [semokin-care] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26T23:17:17.945+07:00  INFO 58672 --- [semokin-care] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-26T23:17:18.173+07:00  INFO 58672 --- [semokin-care] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26T23:17:18.193+07:00  INFO 58672 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-26T23:17:18.271+07:00  INFO 58672 --- [semokin-care] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@472d0f4
+2024-07-26T23:17:18.272+07:00  INFO 58672 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-26T23:17:19.360+07:00  INFO 58672 --- [semokin-care] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26T23:17:19.398+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : create table brands (id varchar(255) not null, created_at bigint not null, description varchar(255), is_deleted boolean, name varchar(255) not null, updated_at bigint, primary key (id))
+2024-07-26T23:17:19.403+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : create table categories (id varchar(255) not null, created_at bigint not null, description varchar(255), is_deleted boolean, name varchar(255) not null, updated_at bigint, primary key (id))
+2024-07-26T23:17:19.409+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists customers add column loyalty_point integer
+2024-07-26T23:17:19.412+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : create table product_pictures (id varchar(255) not null, is_deleted boolean, name varchar(255) not null, size bigint not null, url varchar(255) not null, product_id varchar(255), primary key (id))
+2024-07-26T23:17:19.419+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : create table products (id varchar(255) not null, created_at bigint not null, description varchar(255), is_deleted boolean, name varchar(255) not null, price bigint not null, stock integer not null, updated_at bigint, brand_id varchar(255), category_id varchar(255), primary key (id))
+2024-07-26T23:17:19.424+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists profile_pictures add column is_deleted boolean
+2024-07-26T23:17:19.426+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : create table reviews (id varchar(255) not null, comment varchar(255), created_at bigint not null, is_deleted boolean, rating float(53) not null, updated_at bigint, customer_id varchar(255), product_id varchar(255), primary key (id))
+2024-07-26T23:17:19.431+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : create table staff_positions (id varchar(255) not null, description varchar(255), is_deleted boolean, name varchar(255) not null, primary key (id))
+2024-07-26T23:17:19.435+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs add column salary bigint not null
+2024-07-26T23:17:19.436+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs add column position_id varchar(255)
+2024-07-26T23:17:19.487+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists product_pictures add constraint FK6rog63kl5t3e1b3u3vdpkc6n2 foreign key (product_id) references products
+2024-07-26T23:17:19.490+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists products add constraint FKa3a4mpsfdf4d2y6r8ra3sc8mv foreign key (brand_id) references brands
+2024-07-26T23:17:19.493+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists products add constraint FKog2rp4qthbtt2lfyhfo32lsw9 foreign key (category_id) references categories
+2024-07-26T23:17:19.495+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists reviews add constraint FK4sm0k8kw740iyuex3vwwv1etu foreign key (customer_id) references customers
+2024-07-26T23:17:19.498+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists reviews add constraint FKpl51cejpw4gy5swfar8br9ngi foreign key (product_id) references products
+2024-07-26T23:17:19.523+07:00 DEBUG 58672 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists staffs add constraint FK9y6u1jflmm13fjes6wqj46anf foreign key (position_id) references staff_positions
+2024-07-26T23:17:19.538+07:00  INFO 58672 --- [semokin-care] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T23:17:19.721+07:00  INFO 58672 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Started SemokinCareApplication in 2.925 seconds (process running for 3.481)
+2024-07-26T23:17:19.726+07:00  INFO 58672 --- [semokin-care] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T23:17:19.729+07:00  INFO 58672 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-26T23:17:19.734+07:00  INFO 58672 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-26T23:32:04.790+07:00  INFO 61114 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Starting SemokinCareApplication using Java 17.0.11 with PID 61114 (/home/enigma/Documents/Repository/semokin-care/target/classes started by enigma in /home/enigma/Documents/Repository/semokin-care)
+2024-07-26T23:32:04.795+07:00  INFO 61114 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : The following 1 profile is active: "dev"
+2024-07-26T23:32:05.321+07:00  INFO 61114 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-26T23:32:05.339+07:00  INFO 61114 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2024-07-26T23:32:05.651+07:00  INFO 61114 --- [semokin-care] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-26T23:32:05.699+07:00  INFO 61114 --- [semokin-care] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-26T23:32:05.726+07:00  INFO 61114 --- [semokin-care] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-26T23:32:05.959+07:00  INFO 61114 --- [semokin-care] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-26T23:32:05.980+07:00  INFO 61114 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-26T23:32:06.045+07:00  INFO 61114 --- [semokin-care] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72906e
+2024-07-26T23:32:06.047+07:00  INFO 61114 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-26T23:32:07.150+07:00  INFO 61114 --- [semokin-care] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-26T23:32:07.190+07:00 DEBUG 61114 --- [semokin-care] [main] org.hibernate.SQL                        : create table cart_items (id varchar(255) not null, created_at bigint not null, quantity integer, updated_at bigint, cart_id varchar(255), product_id varchar(255), primary key (id))
+2024-07-26T23:32:07.199+07:00 DEBUG 61114 --- [semokin-care] [main] org.hibernate.SQL                        : create table carts (id varchar(255) not null, created_at bigint not null, is_deleted boolean, updated_at bigint, customer_id varchar(255), primary key (id))
+2024-07-26T23:32:07.207+07:00 DEBUG 61114 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists cart_items drop constraint if exists UKstjbkkh1eftd036p0v219glxw
+2024-07-26T23:32:07.211+07:00  WARN 61114 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T23:32:07.212+07:00  WARN 61114 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "ukstjbkkh1eftd036p0v219glxw" of relation "cart_items" does not exist, skipping
+2024-07-26T23:32:07.213+07:00 DEBUG 61114 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists cart_items add constraint UKstjbkkh1eftd036p0v219glxw unique (product_id)
+2024-07-26T23:32:07.217+07:00 DEBUG 61114 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists carts drop constraint if exists UK88sv4i13lo80s74ox7rsb5a2c
+2024-07-26T23:32:07.219+07:00  WARN 61114 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-26T23:32:07.219+07:00  WARN 61114 --- [semokin-care] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk88sv4i13lo80s74ox7rsb5a2c" of relation "carts" does not exist, skipping
+2024-07-26T23:32:07.219+07:00 DEBUG 61114 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists carts add constraint UK88sv4i13lo80s74ox7rsb5a2c unique (customer_id)
+2024-07-26T23:32:07.222+07:00 DEBUG 61114 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists cart_items add constraint FKpcttvuq4mxppo8sxggjtn5i2c foreign key (cart_id) references carts
+2024-07-26T23:32:07.225+07:00 DEBUG 61114 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists cart_items add constraint FK1re40cjegsfvw58xrkdp6bac6 foreign key (product_id) references products
+2024-07-26T23:32:07.227+07:00 DEBUG 61114 --- [semokin-care] [main] org.hibernate.SQL                        : alter table if exists carts add constraint FK8ba3sryid5k8a9kidpkvqipyt foreign key (customer_id) references customers
+2024-07-26T23:32:07.334+07:00  INFO 61114 --- [semokin-care] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T23:32:07.534+07:00  INFO 61114 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Started SemokinCareApplication in 3.255 seconds (process running for 3.833)
+2024-07-26T23:32:07.540+07:00  INFO 61114 --- [semokin-care] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-26T23:32:07.542+07:00  INFO 61114 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-26T23:32:07.548+07:00  INFO 61114 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
