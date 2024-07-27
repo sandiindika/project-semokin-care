@@ -7,15 +7,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = TableNames.ORDER)
-public class Order {
+@Table(name = TableNames.ORDER_HISTORY)
+public class OrderHistories {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -35,10 +33,10 @@ public class Order {
     @Column(name = "created_at", nullable = false)
     private Long createdAt;
 
+    @Column(name = "updated_at", nullable = false)
+    private Long updatedAt;
+
     @OneToOne
     @JoinColumn(name = "payment_id", referencedColumnName = "id")
     private Payment payment;
-
-    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<OrderItem> orderItems;
 }
