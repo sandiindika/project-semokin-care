@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findFirstByEmailOrUsername(username)
+        User user = userRepository.findFirstByEmailOrUsername(username,username)
                 .orElseThrow(()-> new UsernameNotFoundException("Username or email not found"));
         return AppUser.builder()
                 .Id(user.getId())
@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public AppUser loadUserById(String id) {
-        User user = userRepository.findFirstByEmailOrUsername(id)
+        User user = userRepository.findById(id)
                 .orElseThrow(()-> new UsernameNotFoundException("Username or email not found"));
         return AppUser.builder()
                 .Id(user.getId())
