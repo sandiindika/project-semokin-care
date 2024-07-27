@@ -24,4 +24,11 @@ public class DatetimeUtil {
 
         return dateFormat.format(new Date(timestamp));
     }
+
+    public String generateDatetime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        dateFormat.setTimeZone(TimeZone.getTimeZone(TIMEZONE));
+
+        return dateFormat.format(new Date());
+    }
 }
