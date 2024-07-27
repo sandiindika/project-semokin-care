@@ -40,6 +40,6 @@ public class Payment {
     private Long updatedAt;
 
     public enum PaymentStatus {
-        PAID, UNPAID
+        PAID, UNPAID, PENDING
     }
 }
