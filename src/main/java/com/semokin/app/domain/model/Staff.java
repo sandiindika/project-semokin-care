@@ -50,10 +50,6 @@ public class Staff {
     @Column(nullable = false)
     private Long salary;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "position_id")
-    private StaffPosition staffPosition;
-
     @Column(name = "is_deleted")
     private Boolean isDeleted = Boolean.FALSE;
 

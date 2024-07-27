@@ -28,6 +28,6 @@ public class Role {
     private Set<User> users;
 
     public enum Privilege {
-        CUSTOMER, STAFF, ADMIN
+        CUSTOMER, STAFF_IT, STAFF_ADMIN, STAFF_SALES
     }
 }

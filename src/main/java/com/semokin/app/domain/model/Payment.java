@@ -17,9 +17,11 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @OneToOne
-    @JoinColumn(name = "order_id", referencedColumnName = "id")
+    @OneToOne(mappedBy = "payment")
     private Order order;
+
+    @OneToOne(mappedBy = "payment")
+    private OrderHistories orderHistories;
 
     @NonNull
     @Column(nullable = false)
