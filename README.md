@@ -6,52 +6,6 @@ This project is a REST API for a skincare store, built using Java Spring. It is 
 
 This project aims to provide a comprehensive REST API for managing a skincare store. It includes functionalities for managing products, orders, customers, reviews, and more. The API is designed to be scalable and easy to integrate with various front-end applications.
 
-### Project Structure
-
-The project structure is organized as follows:
-
-```
-src
-├── main
-│   ├── java
-│   │   └── com
-│   │       └── semokin
-│   │           └── app
-│   │               ├── adapter
-│   │               │   └── config
-│   │               │       └── constant
-│   │               │           └── TableNames.java
-│   │               ├── domain
-│   │               │   └── model
-│   │               │       ├── Brand.java
-│   │               │       ├── Cart.java
-│   │               │       ├── CartItem.java
-│   │               │       ├── Category.java
-│   │               │       ├── Customer.java
-│   │               │       ├── Order.java
-│   │               │       ├── OrderItem.java
-│   │               │       ├── OrderStatus.java
-│   │               │       ├── Payment.java
-│   │               │       ├── Product.java
-│   │               │       ├── ProductPicture.java
-│   │               │       ├── ProfilePicture.java
-│   │               │       ├── Review.java
-│   │               │       ├── ReviewPicture.java
-│   │               │       ├── Role.java
-│   │               │       ├── Staff.java
-│   │               │       ├── StaffPosition.java
-│   │               │       └── User.java
-│   │               └── SemokinCareApplication.java
-│   └── resources
-│       └── application.properties
-└── test
-    └── java
-        └── com
-            └── semokin
-                └── app
-                    └── SkincareStoreApplicationTests.java
-```
-
 ### Entity Models
 
 **Brand**: Represents the brand of skincare products.
