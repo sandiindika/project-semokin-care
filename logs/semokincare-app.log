@@ -1,0 +1,50 @@
+2024-07-27T13:27:45.209+07:00  INFO 84678 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Starting SemokinCareApplication using Java 17.0.11 with PID 84678 (/home/enigma/Documents/Repository/semokin-care/target/classes started by enigma in /home/enigma/Documents/Repository/semokin-care)
+2024-07-27T13:27:45.211+07:00  INFO 84678 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : The following 1 profile is active: "dev"
+2024-07-27T13:27:45.862+07:00  INFO 84678 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-27T13:27:45.948+07:00  INFO 84678 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 17 JPA repository interfaces.
+2024-07-27T13:27:46.182+07:00  INFO 84678 --- [semokin-care] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=db1cf3d3-2098-39da-928d-d4abaad59a9e
+2024-07-27T13:27:46.676+07:00  INFO 84678 --- [semokin-care] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-27T13:27:46.684+07:00  INFO 84678 --- [semokin-care] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-27T13:27:46.685+07:00  INFO 84678 --- [semokin-care] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-07-27T13:27:46.729+07:00  INFO 84678 --- [semokin-care] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-27T13:27:46.729+07:00  INFO 84678 --- [semokin-care] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1479 ms
+2024-07-27T13:27:46.914+07:00  INFO 84678 --- [semokin-care] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-27T13:27:46.970+07:00  INFO 84678 --- [semokin-care] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27T13:27:47.001+07:00  INFO 84678 --- [semokin-care] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-27T13:27:47.246+07:00  INFO 84678 --- [semokin-care] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-27T13:27:47.269+07:00  INFO 84678 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-27T13:27:47.330+07:00  INFO 84678 --- [semokin-care] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@13b29b34
+2024-07-27T13:27:47.331+07:00  INFO 84678 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-27T13:27:48.553+07:00  INFO 84678 --- [semokin-care] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27T13:27:48.744+07:00  INFO 84678 --- [semokin-care] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-27T13:27:49.322+07:00  INFO 84678 --- [semokin-care] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userServiceImpl
+2024-07-27T13:27:50.308+07:00  INFO 84678 --- [semokin-care] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-27T13:27:50.327+07:00  INFO 84678 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Started SemokinCareApplication in 5.628 seconds (process running for 6.147)
+2024-07-27T13:29:44.394+07:00  INFO 84678 --- [semokin-care] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-27T13:29:44.396+07:00  INFO 84678 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-27T13:29:44.402+07:00  INFO 84678 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-27T13:52:17.126+07:00  INFO 86973 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Starting SemokinCareApplication using Java 17.0.11 with PID 86973 (/home/enigma/Documents/Repository/semokin-care/target/classes started by enigma in /home/enigma/Documents/Repository/semokin-care)
+2024-07-27T13:52:17.130+07:00  INFO 86973 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : The following 1 profile is active: "dev"
+2024-07-27T13:52:17.951+07:00  INFO 86973 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-27T13:52:18.027+07:00  INFO 86973 --- [semokin-care] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 17 JPA repository interfaces.
+2024-07-27T13:52:18.255+07:00  INFO 86973 --- [semokin-care] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=76ad1385-abe9-35bf-a695-fb1b25c5a752
+2024-07-27T13:52:18.751+07:00  INFO 86973 --- [semokin-care] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-27T13:52:18.760+07:00  INFO 86973 --- [semokin-care] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-27T13:52:18.761+07:00  INFO 86973 --- [semokin-care] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-07-27T13:52:18.809+07:00  INFO 86973 --- [semokin-care] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-27T13:52:18.809+07:00  INFO 86973 --- [semokin-care] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1613 ms
+2024-07-27T13:52:18.994+07:00  INFO 86973 --- [semokin-care] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-27T13:52:19.047+07:00  INFO 86973 --- [semokin-care] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27T13:52:19.077+07:00  INFO 86973 --- [semokin-care] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-27T13:52:19.301+07:00  INFO 86973 --- [semokin-care] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-27T13:52:19.321+07:00  INFO 86973 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-27T13:52:19.383+07:00  INFO 86973 --- [semokin-care] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@71316cd7
+2024-07-27T13:52:19.384+07:00  INFO 86973 --- [semokin-care] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-27T13:52:20.575+07:00  INFO 86973 --- [semokin-care] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27T13:52:20.771+07:00  INFO 86973 --- [semokin-care] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-27T13:52:21.392+07:00  INFO 86973 --- [semokin-care] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userServiceImpl
+2024-07-27T13:52:22.366+07:00  INFO 86973 --- [semokin-care] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-27T13:52:22.385+07:00  INFO 86973 --- [semokin-care] [main] com.semokin.app.SemokinCareApplication   : Started SemokinCareApplication in 5.885 seconds (process running for 6.363)
+2024-07-27T13:52:26.790+07:00  INFO 86973 --- [semokin-care] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-27T13:52:26.791+07:00  INFO 86973 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-27T13:52:26.797+07:00  INFO 86973 --- [semokin-care] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
