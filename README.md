@@ -39,12 +39,12 @@ To get started with the project, follow these steps:
    
 2. **Build the project:**
    ```bash
-   ./mvn clean install
+   ./mvnw clean install
    ```
 
 3. **Run the app:**
    ```bash
-   ./mvn spring-boot:run
+   ./mvnw spring-boot:run
    ```
 
 ### Endpoints
