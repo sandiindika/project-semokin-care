@@ -17,6 +17,7 @@ public class UserServiceImpl implements UserService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findFirstByEmailOrUsername(username,username)
                 .orElseThrow(()-> new UsernameNotFoundException("Username or email not found"));
+
         return AppUser.builder()
                 .Id(user.getId())
                 .username(user.getEmail())

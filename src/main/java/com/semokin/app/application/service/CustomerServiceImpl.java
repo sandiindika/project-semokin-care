@@ -11,8 +11,11 @@ import com.semokin.app.infrastructure.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.lang.annotation.Target;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -21,6 +24,7 @@ public class CustomerServiceImpl implements CustomerService {
     private final CustomerRepository customerRepository;
     private final ValidateService validateService;
     @Override
+    @Transactional
     public CustomerResponse createCustomer(User user, CustomerCreateRequest request) {
         validateService.validate(request);
         // Implement business logic here to create a customer response from the given request
@@ -29,6 +33,7 @@ public class CustomerServiceImpl implements CustomerService {
         customer.setLastName(request.getLastName());
         customer.setPhoneNumber(request.getPhoneNumber());
         customer.setDateOfBirth(request.getDateOfBirth());
+        customer.setCreatedAt(new Date().getTime());
         customer.setUser(user);
         customerRepository.save(customer);
 
@@ -36,6 +41,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    @Transactional
     public CustomerResponse getCustomerById(User user, String id) {
         Customer customer = customerRepository.findFirstByUserAndId(user,id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.CONFLICT,"Customer not found"));
@@ -43,6 +49,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    @Transactional
     public void deleteCustomerById(User user, String id) {
         Customer customer = customerRepository.findFirstByUserAndId(user,id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.CONFLICT,"Customer not found"));
@@ -50,6 +57,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    @Transactional
     public CustomerResponse updateCustomer(User user, CustomerUpdateRequest request) {
         validateService.validate(request);
         Customer customer = customerRepository.findFirstByUserAndId(user,request.getId())
@@ -59,11 +67,13 @@ public class CustomerServiceImpl implements CustomerService {
         customer.setLastName(request.getLastName());
         customer.setPhoneNumber(request.getPhoneNumber());
         customer.setDateOfBirth(request.getDateOfBirth());
+        customer.setUpdatedAt(new Date().getTime());
         customerRepository.save(customer);
         return createResponse(customer);
     }
 
     @Override
+    @Transactional
     public List<CustomerResponse> getAllCustomer() {
         return List.of();
     }

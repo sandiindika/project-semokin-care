@@ -37,6 +37,11 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    private boolean isActive;
+
+    @Column(name = "create_active_token")
+    private Long createActiveToken;
+
     @ManyToMany
     @JoinTable(
             name = TableNames.USER_ROLE,

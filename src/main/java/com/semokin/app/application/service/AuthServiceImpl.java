@@ -14,13 +14,17 @@ import com.semokin.app.domain.model.Role;
 import com.semokin.app.domain.model.User;
 import com.semokin.app.infrastructure.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
@@ -37,7 +41,16 @@ public class AuthServiceImpl implements AuthService {
     private final AuthenticationManager authenticationManager;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
+
+    private final JavaMailSender javaMailSender;
+
+    @Value("${spring.mail.username}")
+    private String senderEmail;
+    @Value("${spring.mail.url.activate}")
+    private String urlEmail;
+
     @Override
+    @Transactional
     public RegisterResponse register(RegisterCustomerRequest customerRequest) {
         validateService.validate(customerRequest);
 
@@ -51,10 +64,14 @@ public class AuthServiceImpl implements AuthService {
                 .username(customerRequest.getUsername())
                 .password(passwordEncoder.encode(customerRequest.getPassword()))
                 .roles(Set.of(role))
+                .isActive(false)
                 .build();
         userRepository.save(newUser);
 //        customer service create
         customerService.createCustomer(newUser, customerRequest.getCustomerCreateRequest());
+
+//        send email
+//        .....
         return RegisterResponse.builder()
                 .email(newUser.getEmail())
                 .role(List.of(role.getRole()))
@@ -64,6 +81,13 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public LoginResponse login(LoginRequest loginRequest) {
         validateService.validate(loginRequest);
+
+        Optional<User> user = userRepository.findFirstByEmailOrUsername(loginRequest.getEmailOrUsername(), loginRequest.getEmailOrUsername());
+        if (user.isPresent()){
+            if (!user.get().isActive()) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "user is not active");
+            }
+        }
 
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -82,5 +106,47 @@ public class AuthServiceImpl implements AuthService {
                 .token(token)
                 .roles(appUser.getRoles())
                 .build();
+    }
+
+    @Transactional
+    public void activate(String id){
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+        if (user.getCreateActiveToken() > System.currentTimeMillis()){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Active Token is expired");
+        }
+        user.setActive(true);;
+    }
+
+    @Transactional
+    public boolean sendEmail(String email){
+        User user = userRepository.findFirstByEmailOrUsername(email,email)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+        String id = user.getId();
+        long currentTime = System.currentTimeMillis();
+        user.setCreateActiveToken(currentTime);
+        userRepository.save(user);
+        SimpleMailMessage simpleMailMessage = getSimpleMailMessage(email,id);
+
+        javaMailSender.send(simpleMailMessage);
+        return true;
+    }
+
+    private SimpleMailMessage getSimpleMailMessage(String email,String id) {
+        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+        simpleMailMessage.setFrom(senderEmail);
+        simpleMailMessage.setTo(email);
+        simpleMailMessage.setSubject("Activate email");
+        simpleMailMessage.setText(
+                """
+                        <!DOCTYPE html>
+                        <html>
+                        <body>
+                        <h1>Activate Link</h1>
+               """+"  <p><a href="+urlEmail+"?id="+id+">Link activate</a></p>\n" +
+                        "</body>\n" +
+                        "</html>"
+        );
+        return simpleMailMessage;
     }
 }
