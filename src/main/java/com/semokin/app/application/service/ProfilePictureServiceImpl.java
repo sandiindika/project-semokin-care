@@ -66,7 +66,6 @@ public class ProfilePictureServiceImpl implements ProfilePictureService {
     @Override
     public byte[] loadFileAsBytes(String fileName) {
         Path filePath = fileStorageLocation.resolve(fileName);
-        System.out.println(filePath);
         if (!Files.exists(filePath)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,fileName+" not found");
         }
