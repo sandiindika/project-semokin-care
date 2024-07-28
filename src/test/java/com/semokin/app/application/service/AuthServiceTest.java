@@ -5,11 +5,13 @@ import com.semokin.app.adapter.dto.request.RegisterCustomerRequest;
 import com.semokin.app.application.contract.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @RequiredArgsConstructor
 public class AuthServiceTest {
+    @Autowired
     private final AuthService authService;
     // test cases for AuthService
 

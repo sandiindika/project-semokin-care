@@ -1,5 +1,6 @@
 package com.semokin.app.adapter.config.security;
 
+import com.semokin.app.adapter.config.resolver.UserArgumentResolver;
 import jakarta.servlet.DispatcherType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -27,6 +28,7 @@ import java.util.List;
 public class SecurityConfiguration implements WebMvcConfigurer {
     private final AuthTokenFilter authTokenFilter;
     private final AccessDeniedHandlerImp accessDeniedHandlerImpl;
+    private final UserArgumentResolver userArgumentResolver;
 
     private static final String[] WHITE_LIST_URL = {
             "/api/v1/auth/**"
@@ -40,6 +42,12 @@ public class SecurityConfiguration implements WebMvcConfigurer {
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
+    }
+
+    @Override
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
+        WebMvcConfigurer.super.addArgumentResolvers(resolvers);
+        resolvers.add(userArgumentResolver);
     }
 
     @Bean
