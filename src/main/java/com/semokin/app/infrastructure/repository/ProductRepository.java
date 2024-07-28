@@ -12,6 +12,7 @@ import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<Product, String> {
 
+    Page<Product> findByIsDeletedFalse(Pageable pageable);
     Page<Product> findByNameContainingIgnoreCase(String name, Pageable pageable);
     Page<Product> findByCategoryId(String categoryId, Pageable pageable);
     Page<Product> findByBrandId(String brandId, Pageable pageable);
