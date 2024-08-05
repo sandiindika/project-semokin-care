@@ -18,7 +18,8 @@ target/
 *.iws
 *.iml
 *.ipr
-/logs
+/logs/*.log
+/logs/*.gz
 
 ### NetBeans ###
 /nbproject/private/
