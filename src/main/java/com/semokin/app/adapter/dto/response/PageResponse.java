@@ -2,6 +2,8 @@ package com.semokin.app.adapter.dto.response;
 
 import lombok.Builder;
 
+import java.util.List;
+
 @Builder
 public class PageResponse<T> {
 
@@ -9,5 +11,5 @@ public class PageResponse<T> {
     private int totalPages;
     private int currentPage;
     private int numberOfElements;
-    private T content;
+    private List<T> content;
 }
