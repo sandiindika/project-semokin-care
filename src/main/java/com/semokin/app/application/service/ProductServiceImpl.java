@@ -3,7 +3,6 @@ package com.semokin.app.application.service;
 import com.semokin.app.adapter.dto.request.ProductRequest;
 import com.semokin.app.adapter.dto.response.PageResponse;
 import com.semokin.app.adapter.dto.response.ProductResponse;
-import com.semokin.app.adapter.dto.response.WebResponse;
 import com.semokin.app.adapter.mapper.PageMapper;
 import com.semokin.app.adapter.mapper.ProductMapper;
 import com.semokin.app.application.contract.ProductService;
@@ -12,12 +11,9 @@ import com.semokin.app.domain.model.Product;
 import com.semokin.app.domain.model.ProductPicture;
 import com.semokin.app.domain.model.Review;
 import com.semokin.app.infrastructure.repository.ProductRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,19 +26,19 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
-    private final PageMapper<List<ProductResponse>> pageMapper;
+    private final PageMapper pageMapper;
 
     @Transactional(readOnly = true)
     @Override
     public PageResponse<ProductResponse> findAll(Pageable pageable) {
         Page<Product> products = productRepository.findByIsDeletedFalse(pageable);
-        if (!(products.getTotalElements() > 0)) throw new ResourceNoContentException("There are no products");
+        if (products.isEmpty()) throw new ResourceNoContentException("There are no products");
 
         List<ProductResponse> productResponses = products.getContent().stream()
                 .map(productMapper::toResponse)
                 .collect(Collectors.toList());
 
-        return (PageResponse<ProductResponse>) pageMapper.toResponse(products, productResponses);
+        return pageMapper.toResponse(products, productResponses);
     }
 
     @Override

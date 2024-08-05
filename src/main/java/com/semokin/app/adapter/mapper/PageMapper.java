@@ -4,11 +4,13 @@ import com.semokin.app.adapter.dto.response.PageResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
-@Component
-public class PageMapper<T>{
+import java.util.List;
 
-    public PageResponse toResponse(Page page, T content) {
-        return PageResponse.builder()
+@Component
+public class PageMapper{
+
+    public <T> PageResponse<T> toResponse(Page<?> page, List<T> content) {
+        return PageResponse.<T>builder()
                 .totalElements(page.getTotalElements())
                 .totalPages(page.getTotalPages())
                 .currentPage(page.getNumber() + 1)
