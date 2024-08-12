@@ -8,42 +8,42 @@ This project aims to provide a comprehensive REST API for managing a skincare st
 
 ### Entity Models
 
-**Brand**: Represents the brand of skincare products.
-**Cart**: Represents a shopping cart.
-**CartItem**: Represents an item in a shopping cart.
-**Category**: Represents a product category.
-**Customer**: Represents a customer.
-**Order**: Represents an order placed by a customer.
-**OrderItem**: Represents an item in an order.
-**OrderStatus**: Represents the status of an order.
-**Payment**: Represents payment information.
-**Product**: Represents a product in the store.
-**ProductPicture**: Represents pictures of products.
-**ProfilePicture**: Represents a customer's profile picture.
-**Review**: Represents a review of a product.
-**ReviewPicture**: Represents pictures in a review.
-**Role**: Represents user roles.
-**Staff**: Represents a staff member.
-**StaffPosition**: Represents the position of a staff member.
-**User**: Represents a user of the system.
+- **Brand**: Represents the brand of skincare products.
+- **Cart**: Represents a shopping cart.
+- **CartItem**: Represents an item in a shopping cart.
+- **Category**: Represents a product category.
+- **Customer**: Represents a customer.
+- **Order**: Represents an order placed by a customer.
+- **OrderItem**: Represents an item in an order.
+- **OrderStatus**: Represents the status of an order.
+- **Payment**: Represents payment information.
+- **Product**: Represents a product in the store.
+- **ProductPicture**: Represents pictures of products.
+- **ProfilePicture**: Represents a customer's profile picture.
+- **Review**: Represents a review of a product.
+- **ReviewPicture**: Represents pictures in a review.
+- **Role**: Represents user roles.
+- **Staff**: Represents a staff member.
+- **StaffPosition**: Represents the position of a staff member.
+- **User**: Represents a user of the system.
 
 ### Getting Started
 
 To get started with the project, follow these steps:
 
 1. **Clone the repos:**
-   ```bash
+   ```shell
    git clone git@github.com:sandiindika/project-semokin-care.git
    cd project-semokin-care
    ```
    
 2. **Build the project:**
-   ```bash
+   ```shell
    ./mvnw clean install
    ```
 
 3. **Run the app:**
-   ```bash
+   ```shell
    ./mvnw spring-boot:run
    ```
 
