@@ -1,14 +1,13 @@
 package com.semokin.app.application.service;
 
 import com.semokin.app.adapter.config.security.JwtUtil;
+import com.semokin.app.adapter.dto.request.CustomerCreateRequest;
 import com.semokin.app.adapter.dto.request.LoginRequest;
 import com.semokin.app.adapter.dto.request.RegisterCustomerRequest;
+import com.semokin.app.adapter.dto.request.RegisterStaffRequest;
 import com.semokin.app.adapter.dto.response.LoginResponse;
 import com.semokin.app.adapter.dto.response.RegisterResponse;
-import com.semokin.app.application.contract.AuthService;
-import com.semokin.app.application.contract.CustomerService;
-import com.semokin.app.application.contract.RoleService;
-import com.semokin.app.application.contract.ValidateService;
+import com.semokin.app.application.contract.*;
 import com.semokin.app.domain.model.AppUser;
 import com.semokin.app.domain.model.Role;
 import com.semokin.app.domain.model.User;
@@ -41,6 +40,7 @@ public class AuthServiceImpl implements AuthService {
     private final AuthenticationManager authenticationManager;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
+    private final StaffService staffService;
 
     private final JavaMailSender javaMailSender;
 
@@ -71,7 +71,9 @@ public class AuthServiceImpl implements AuthService {
         customerService.createCustomer(newUser, customerRequest.getCustomerCreateRequest());
 
 //        send email
-//        .....
+        if (!sendEmail(newUser.getEmail())){
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Invalid email");
+        }
         return RegisterResponse.builder()
                 .email(newUser.getEmail())
                 .role(List.of(role.getRole()))
@@ -149,4 +151,35 @@ public class AuthServiceImpl implements AuthService {
         );
         return simpleMailMessage;
     }
+
+    @Transactional
+//    register admin
+    public RegisterResponse registerAdmin(RegisterStaffRequest request) {
+        validateService.validate(request);
+
+        Optional<User> user = userRepository.findFirstByEmailOrUsername(request.getUsername(), request.getEmail());
+        if (user.isPresent()){
+            throw new ResponseStatusException(HttpStatus.CONFLICT,"Email or Username already exists");
+        }
+        Role role = roleService.getOrSave(Role.Privilege.STAFF_ADMIN);
+        User newUser = User.builder()
+               .email(request.getEmail())
+               .username(request.getUsername())
+               .password(passwordEncoder.encode(request.getPassword()))
+               .roles(Set.of(role))
+               .isActive(false)
+               .build();
+        userRepository.save(newUser);
+
+//        staff create
+        staffService.createStaff(newUser, request.getStaffCreateRequest());
+        if (!sendEmail(newUser.getEmail())){
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Invalid email");
+        }
+        return RegisterResponse.builder()
+               .email(newUser.getEmail())
+               .role(List.of(role.getRole()))
+               .build();
+    }
+
 }
