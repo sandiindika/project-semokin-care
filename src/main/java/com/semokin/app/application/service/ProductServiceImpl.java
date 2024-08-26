@@ -5,9 +5,7 @@ import com.semokin.app.adapter.dto.response.*;
 import com.semokin.app.adapter.mapper.*;
 import com.semokin.app.application.contract.ProductService;
 import com.semokin.app.domain.exception.ResourceNoContentException;
-import com.semokin.app.domain.model.Product;
-import com.semokin.app.domain.model.ProductPicture;
-import com.semokin.app.domain.model.Review;
+import com.semokin.app.domain.model.*;
 import com.semokin.app.infrastructure.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -15,8 +13,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Instant;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Transactional(readOnly = true)
     @Override
-    public PageResponse<ProductResponse> findAll(Pageable pageable) {
+    public PageResponse<ProductResponse> findAllProduct(Pageable pageable) {
         Page<Product> products = productRepository.findByIsDeletedFalse(pageable);
         if (products.isEmpty()) throw new ResourceNoContentException("There are no products");
 
@@ -49,16 +47,16 @@ public class ProductServiceImpl implements ProductService {
 
     @Transactional(readOnly = true)
     @Override
-    public ProductResponse findById(String id) {
-        Optional<Product> product = productRepository.findById(id);
-
-        return product.map(productMapper::toResponse).orElseThrow(() ->
+    public ProductResponse findProductById(String id) {
+        Product product = productRepository.findById(id).orElseThrow(() ->
                 new ResourceNoContentException("Product not found"));
+
+        return productMapper.toResponse(product);
     }
 
     @Transactional(readOnly = true)
     @Override
-    public PageResponse<ProductResponse> findByName(String name, Pageable pageable) {
+    public PageResponse<ProductResponse> findProductByName(String name, Pageable pageable) {
         Page<Product> products = productRepository.findByNameContainingIgnoreCase(name, pageable);
         if (products.isEmpty()) throw new ResourceNoContentException("There are no products");
 
@@ -71,7 +69,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Transactional(readOnly = true)
     @Override
-    public PageResponse<ProductResponse> findByCategory(String category, Pageable pageable) {
+    public PageResponse<ProductResponse> findProductByCategory(String category, Pageable pageable) {
         categoryRepository.findById(category).orElseThrow(() -> new ResourceNoContentException("Category not found"));
 
         Page<Product> products = productRepository.findByCategoryId(category, pageable);
@@ -86,7 +84,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Transactional(readOnly = true)
     @Override
-    public PageResponse<ProductResponse> findByBrand(String brand, Pageable pageable) {
+    public PageResponse<ProductResponse> findProductByBrand(String brand, Pageable pageable) {
         brandRepository.findById(brand).orElseThrow(() -> new ResourceNoContentException("Brand not found"));
 
         Page<Product> products = productRepository.findByBrandId(brand, pageable);
@@ -101,7 +99,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Transactional(readOnly = true)
     @Override
-    public PageResponse<ProductResponse> findByMinPriceAndMaxPrice(Long minPrice, Long maxPrice, Pageable pageable) {
+    public PageResponse<ProductResponse> findProductByMinPriceAndMaxPrice(Long minPrice, Long maxPrice, Pageable pageable) {
         Page<Product> products = productRepository.findByPriceBetween(minPrice, maxPrice, pageable);
         if (products.isEmpty()) throw new ResourceNoContentException("There are no products");
 
@@ -148,18 +146,47 @@ public class ProductServiceImpl implements ProductService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
-    public ProductResponse save(ProductRequest request) {
-        return null;
+    public ProductResponse saveProduct(ProductRequest request) {
+        Product product = productMapper.toModel(request);
+        productRepository.save(product);
+
+        return productMapper.toResponse(product);
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
-    public ProductResponse updateExisting(String id) {
-        return null;
+    public ProductResponse updateExistingProduct(String id, ProductRequest request) {
+        Product existingProduct = productRepository.findById(id).orElseThrow(() ->
+                new ResourceNoContentException("Product not found"));
+
+        Category existingCategory = categoryRepository.findById(request.getCategoryId()).orElseThrow(() ->
+                new ResourceNoContentException("Category not found"));
+
+        Brand existingBrand = brandRepository.findById(request.getBrandId()).orElseThrow(() ->
+                new ResourceNoContentException("Brand not found"));
+
+        existingProduct.setName(request.getName());
+        existingProduct.setDescription(request.getDescription());
+        existingProduct.setPrice(request.getPrice());
+        existingProduct.setStock(request.getStock());
+        existingProduct.setCategory(existingCategory);
+        existingProduct.setBrand(existingBrand);
+        existingProduct.setUpdatedAt(Instant.now().toEpochMilli());
+
+        Product product = productRepository.save(existingProduct);
+
+        return productMapper.toResponse(product);
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
-    public void delete(String id) {
+    public void deleteProduct(String id) {
+        Product product = productRepository.findById(id).orElseThrow(() ->
+                new ResourceNoContentException("Product not found"));
 
+        product.setIsDeleted(true);
+        productRepository.save(product);
     }
 }

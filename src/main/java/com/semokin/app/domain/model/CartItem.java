@@ -23,8 +23,8 @@ public class CartItem {
     @JoinColumn(name = "cart_id")
     private Cart cart;
 
-    @OneToOne
-    @JoinColumn(name = "product_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "product_id")
     private Product product;
 
     private Integer quantity;
